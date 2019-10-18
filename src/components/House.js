@@ -5,6 +5,9 @@ import DeleteButton from '../images/delete_button.png';
 const House = (props) => {
     return (
       <HouseMC>
+        <PropertyImgContainer>
+          <PropertyImg src={props.img} />
+        </PropertyImgContainer>
         <PropertyDetailsContainer>
           <PropertyDetails>Property Name: {props.houseName}</PropertyDetails>
           <PropertyDetails>Address: {props.address}</PropertyDetails>
@@ -12,6 +15,10 @@ const House = (props) => {
           <PropertyDetails>State: {props.state}</PropertyDetails>
           <PropertyDetails>Zip: {props.zip}</PropertyDetails>
         </PropertyDetailsContainer>
+        <PropertyFinancialDetailsContainer>
+          <PropertyDetails>Mortgage: {props.mortgage}</PropertyDetails>
+          <PropertyDetails>Rent: {props.rent}</PropertyDetails>
+        </PropertyFinancialDetailsContainer>
         <DeleteButtonContainer>
           <DeleteButtonImg id={props.id} src={DeleteButton} onClick={e => props.deleteFn(e)} />
         </DeleteButtonContainer>
@@ -23,7 +30,7 @@ export default House;
 
 const HouseMC = styled.section`
   background-color: #DEDEDE
-  // height: 150px;
+  height: 200px;
 
   display: flex;
   justify-content: space-between;
@@ -31,18 +38,40 @@ const HouseMC = styled.section`
   margin-bottom: 20px;
 `
 
+const PropertyImgContainer = styled.section`
+  width: 33%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  `
+  
+  const PropertyImg = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+`
+
 const PropertyDetailsContainer = styled.section`
+  width: 33%;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
-  // justify-content: space-evenly;
-  // align-items: center;
 `  
   
 const PropertyDetails = styled.p`
   margin-left: 10px;
   font-size: 16px;
-  // margin-bottom: 5px;
   padding: 5px;
+`
+
+const PropertyFinancialDetailsContainer = styled.section`
+  width: 33%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
 `
 
 const DeleteButtonContainer = styled.section`

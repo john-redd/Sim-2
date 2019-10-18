@@ -21,7 +21,6 @@ const HeaderMC = styled.header`
   height: 8vh;
 
   display: flex;
-  // justify-content: space-evenly;
   align-items: center;
 `
 

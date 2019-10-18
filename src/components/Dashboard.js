@@ -37,7 +37,7 @@ class Dashboard extends Component {
         <DashboardHeader>
           <TitleAndButtonContainer>
             <DashboardTitle>Dashboard</DashboardTitle>
-            <Link to="/wizard"><DashboardBtn>Add New Property</DashboardBtn></Link>
+            <Link to="/wizard/step1"><DashboardBtn>Add New Property</DashboardBtn></Link>
           </TitleAndButtonContainer>
           <HouseListings>Home Listings</HouseListings>
         </DashboardHeader>
@@ -67,7 +67,6 @@ const DashboardMC = styled.section`
   background-color: #e5f4ec;
   width: 48%;
   min-height: 86.5vh;
-  // max-height: auto;
   height: fit-content;
 
   padding: 20px;
@@ -84,9 +83,6 @@ const DashboardHeader = styled.header`
 
   display: flex;
   flex-direction: column;
-
-  // padding: 20px;
-
   `
   
   const TitleAndButtonContainer = styled.section`
@@ -97,7 +93,6 @@ const DashboardHeader = styled.header`
   justify-content: space-between;
 
   padding: 20px;
-  // margin-bottom: 20px;
   `
   
   const DashboardTitle = styled.h1`
@@ -117,7 +112,6 @@ const DashboardHeader = styled.header`
   `
   
   const HouseListings = styled.h2`
-  // margin-top: 30px;
   width: 100%;
   padding: 20px;
 
