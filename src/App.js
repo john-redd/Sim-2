@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {HashRouter} from 'react-router-dom';
+import Header from './components/Header';
+import routes from './routes';
+import './reset.css';
+import styled from 'styled-components';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppMC>
+      <HashRouter>
+        <Header />
+        {routes}
+      </HashRouter>
+    </AppMC>
   );
 }
 
 export default App;
+
+const AppMC = styled.section`
+  background-color: #afd4c0;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "Open Sans", sans-serif, sans;
+`
