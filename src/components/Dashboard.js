@@ -13,14 +13,25 @@ class Dashboard extends Component {
     }
   }
 
+  deleteHouse(e){
+    axios.delete(`/api/houses/${e.target.id}`)
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+  }
+
   componentDidMount(){
     axios.get('/api/houses')
     .then(res => this.setState({houses: res.data}))
     .catch(err => console.log(err))
   }
 
+  componentDidUpdate(){
+    axios.get('/api/houses')
+    .then(res => this.setState({houses: res.data}))
+    .catch(err => console.log(err))
+  }
+
   render(){
-    console.log(this.state.houses)
     return (
       <DashboardMC>
         <DashboardHeader>
@@ -42,6 +53,7 @@ class Dashboard extends Component {
             img={e.img}
             mortgage={e.mortgage}
             rent={e.rent}
+            deleteFn={this.deleteHouse}
           />
         ))}
       </DashboardMC>

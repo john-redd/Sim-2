@@ -16,5 +16,7 @@ massive(CONNECTION_STRING)
 .catch(err => console.log(err))
 
 app.get('/api/houses', ctrl.getAllHouses);
+app.post('/api/houses', ctrl.addHouse);
+app.delete('/api/houses/:id', ctrl.deleteHouse);
 
 app.listen(SERVER_PORT, () => console.log(`Server running on port ${SERVER_PORT}`));
