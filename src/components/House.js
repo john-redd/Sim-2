@@ -36,6 +36,8 @@ const HouseMC = styled.section`
   justify-content: space-between;
 
   margin-bottom: 20px;
+
+  padding: 10px;
 `
 
 const PropertyImgContainer = styled.section`

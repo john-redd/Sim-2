@@ -76,7 +76,7 @@ class Step3 extends Component {
             <Input name="rent" onChange={e => this.handleChange(e)} value={this.state.rent} />
           </LabelAndInputContainer>
         </InputContainer>
-        <Link to='/wizard/step2' onClick={this.updateStepThree}><PreviousButton>Previous Step</PreviousButton></Link>
+        <Link to='/wizard/step2' ><PreviousButton>Previous Step</PreviousButton></Link>
         <Link to="/"><CompleteButton onClick={() => this.addHouse()}>Complete</CompleteButton></Link>
       </Step3MC>
     )

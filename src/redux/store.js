@@ -1,4 +1,3 @@
-import React from 'react';
 import {createStore} from 'redux';
 
 const initialState = {
@@ -22,7 +21,6 @@ export function reducer (state = initialState, action) {
 
   switch(type) {
     case UPDATE_STEP_ONE:
-      console.log(state, payload)
       return {...state,
         name: payload.name,
         address: payload.address,
@@ -31,16 +29,13 @@ export function reducer (state = initialState, action) {
         zip: payload.zip
       }
     case UPDATE_STEP_TWO:
-        console.log(state, payload)
       return {...state, img: payload.img}
     case UPDATE_STEP_THREE:
-        console.log(state, payload)
       return {...state,
         mortgage: payload.mortgage,
         rent: payload.rent
       }
     case CANCEL:
-        console.log(state, payload)
       return {
         ...initialState
       }
